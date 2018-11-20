@@ -7,11 +7,24 @@
     {!! link_to_route('tasks.create', '新規タスク作成') !!}
     
     @if(count($tasks) > 0)
-        <ul>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>ステータス</th>
+                <th>タスク</th>
+            </tr>
+        </thead>
+        <tbody>
             @foreach($tasks as $task)
-                <li>{!! link_to_route('tasks.show', $task->id, ['id' => $task->id]) !!} : [{{ $task->status }}] {{ $task->content }}</li>
+                <tr>
+                    <td>{!! link_to_route('tasks.show', $task->id, ['id' => $task->id]) !!}</td>
+                    <td>{{ $task->status }}</td>
+                    <td>{{ $task->content }}</td>
+                </tr>
             @endforeach
-        </ul>
+        </tbody>
+    </table>
     @endif
 
 @endsection
