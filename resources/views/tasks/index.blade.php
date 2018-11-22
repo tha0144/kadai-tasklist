@@ -4,10 +4,10 @@
 
     <h1>タスク一覧</h1>
     
-    {!! link_to_route('tasks.create', '新規タスク作成') !!}
+    {!! link_to_route('tasks.create', '新規タスク作成', null, ['class' => 'btn btn-primary']) !!}
     
     @if(count($tasks) > 0)
-    <table class="table table-striped">
+    <table class="table table-striped table-hover">
         <thead>
             <tr>
                 <th>ID</th>
