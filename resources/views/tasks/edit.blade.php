@@ -18,7 +18,7 @@
                     {!! Form::text('content', null, ['class' => 'form-control']) !!}
                 </div>
                 
-                {!! Form::submit('変更', null, ['class' => 'btn btn-default']) !!}
+                {!! Form::submit('変更', ['class' => 'btn btn-default']) !!}
                 
             {!! Form::close() !!}
         </div>
