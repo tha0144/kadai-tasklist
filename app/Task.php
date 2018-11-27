@@ -7,4 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 class Task extends Model
 {
     //
+    protected $fillable = ['content', 'user_id'];
+    
+    // タスク投稿者を取得
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
 }
