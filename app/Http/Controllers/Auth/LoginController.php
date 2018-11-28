@@ -25,7 +25,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/';
 
     /**
      * Create a new controller instance.
@@ -36,4 +36,10 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+    
+    /*
+    middlewareはコントローラにアクセスする前に確認される条件のようなもの。
+    今の場合、「logout以外のアクションにアクセスするにはguestでなければならない」
+    この条件を満たさない場合（ログイン済みなのにloginにアクセスしようとした）redirectToに飛ばされる。
+    */
 }
